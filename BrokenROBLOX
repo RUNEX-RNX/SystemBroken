@@ -1,6 +1,6 @@
 --RELOAD GUI
 if game.CoreGui:FindFirstChild("SysBroker") then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "RUNEX System",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "System Broken",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
 	return
 end
 local version = 2
@@ -412,7 +412,7 @@ TitleBarLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TitleBarLabel.BorderSizePixel = 0
 TitleBarLabel.Size = UDim2.new(1, 0, 0, 30)
 TitleBarLabel.Font = Enum.Font.Unknown
-TitleBarLabel.Text = "___/RUNEXsystem\___"
+TitleBarLabel.Text = "____/SYSTEMBROKEN\\___"
 TitleBarLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
 TitleBarLabel.TextScaled = true
 TitleBarLabel.TextSize = 14.000
@@ -532,6 +532,7 @@ Credits_Section_Button.TextColor3 = Color3.fromRGB(0, 0, 0)
 Credits_Section_Button.TextScaled = true
 Credits_Section_Button.TextSize = 14.000
 Credits_Section_Button.TextWrapped = true
+
 Game_Section.Name = "Game_Section"
 Game_Section.Parent = Background
 Game_Section.Active = true
@@ -740,7 +741,6 @@ CannonTP1_Button.TextColor3 = Color3.fromRGB(0, 0, 0)
 CannonTP1_Button.TextScaled = true
 CannonTP1_Button.TextSize = 14.000
 CannonTP1_Button.TextWrapped = true
-
 
 CannonTP2_Button.Name = "CannonTP2_Button"
 CannonTP2_Button.Parent = Game_Section
@@ -1677,7 +1677,6 @@ ZombieFEAnim_Button.TextScaled = true
 ZombieFEAnim_Button.TextSize = 14.000
 ZombieFEAnim_Button.TextWrapped = true
 
-
 Misc_Section.Name = "Misc_Section"
 Misc_Section.Parent = Background
 Misc_Section.Active = true
@@ -2200,6 +2199,36 @@ local function ToggleFling(bool)
 	end)
 end
 
+--CHANGE SECTION BUTTONS
+ChangeSection(Home_Section_Button)
+Home_Section_Button.MouseButton1Click:Connect(function()
+	ChangeSection(Home_Section_Button)
+end)
+
+Game_Section_Button.MouseButton1Click:Connect(function()
+	ChangeSection(Game_Section_Button)
+end)
+
+Character_Section_Button.MouseButton1Click:Connect(function()
+	ChangeSection(Character_Section_Button)
+end)
+
+Target_Section_Button.MouseButton1Click:Connect(function()
+	ChangeSection(Target_Section_Button)
+end)
+
+Animations_Section_Button.MouseButton1Click:Connect(function()
+	ChangeSection(Animations_Section_Button)
+end)
+
+Misc_Section_Button.MouseButton1Click:Connect(function()
+	ChangeSection(Misc_Section_Button)
+end)
+
+Credits_Section_Button.MouseButton1Click:Connect(function()
+	ChangeSection(Credits_Section_Button)
+end)
+
 --GAME SECTION BUTTONS
 AntiRagdollFunction = nil
 AntiRagdoll_Button.MouseButton1Click:Connect(function()
@@ -2548,7 +2577,6 @@ ClearCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = nil
 	SendNotify("System Broken","Checkpoint cleared.",5)
 end)
-
 
 local flying = true
 local deb = true
@@ -3507,6 +3535,6 @@ game:GetService("UserInputService").InputBegan:Connect(function(input,gameProces
 	end
 end)
 
-SendNotify("System Broken","Gui developed by RUNEX - Telegram in your clipboard",10)
-setclipboard("https://t.me/RUNEX_X_SCRIPT")
+SendNotify("System Broken","Gui developed by MalwareHub - Discord in your clipboard",10)
+setclipboard("https://discord.gg/RkhpySwNR9")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/premium"))() -- load the premium
