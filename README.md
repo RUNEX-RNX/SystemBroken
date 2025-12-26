@@ -1,5 +1,7 @@
 # LoL script
-this This script has a lot of cool features, Use it but don't harm other players.
+This script was created for entertainment!
+Play and enjoy, but don't use it to harm the players!
+Good luck having fun!
 <!-- PROJECT LOGO -->
    <img src="https://github.com/RUNEX-RNX/Images/blob/main/IMG_20251226_195143.jpg" alt="Logo" width="300" height="200">
 
