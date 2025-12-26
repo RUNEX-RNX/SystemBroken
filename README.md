@@ -1,11 +1,8 @@
 # LoL script
 this This script has a lot of cool features, Use it but don't harm other players.
 <!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  </a>
-   <img src="https://github.com/RUNEX-RNX/Images/blob/main/IMG_20251226_194933.jpg" alt="Logo" width="200" height="200">
-  </a>
+   <img src="https://github.com/RUNEX-RNX/Images/blob/main/IMG_20251226_195143.jpg" alt="Logo" width="200" height="200">
+
 
 <!--How to use-->
 # How to use 
