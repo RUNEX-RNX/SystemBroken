@@ -922,7 +922,7 @@ Welcome_Label.BorderSizePixel = 0
 Welcome_Label.Position = UDim2.new(0, 150, 0, 25)
 Welcome_Label.Size = UDim2.new(0, 200, 0, 100)
 Welcome_Label.Font = Enum.Font.SourceSans
-Welcome_Label.Text = ("Hello "..plr.Name.."! \n Thanks for using my script \nTelegram channel RUNEX X SCRIPT join for more scripts! \nPress [B] to open|close GUI")
+Welcome_Label.Text = ("Hello "..plr.Name.."! \nThanks for using my script! Join telegram RUNEX X SCRIPT \nPress [B] to open|close GUI")
 Welcome_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Welcome_Label.TextSize = 24.000
 Welcome_Label.TextWrapped = true
@@ -1906,7 +1906,7 @@ Credits_Label.BorderSizePixel = 0
 Credits_Label.Position = UDim2.new(0, 25, 0, 150)
 Credits_Label.Size = UDim2.new(0, 350, 0, 150)
 Credits_Label.Font = Enum.Font.SourceSans
-Credits_Label.Text = "Made by: MalwareHUB \nDiscord: system_calix\nVersion: "..version
+Credits_Label.Text = "Owner: RUNEX \nScripts developer: RUNEX and Midway_Roblox \nGUI Creator RUNEX and Kaguyaxscript \nJoin telegram channel RUNEX X SCRIPT \nVersion: "..version
 Credits_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Credits_Label.TextSize = 24.000
 Credits_Label.TextWrapped = true
@@ -3536,5 +3536,5 @@ game:GetService("UserInputService").InputBegan:Connect(function(input,gameProces
 end)
 
 SendNotify("LoL System","RUNEX project \nGood Luck have fun",10)
-setclipboard("https://discord.gg/RkhpySwNR9")
+setclipboard("https://t.me/RUNEX_X_SCRIPT")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/premium"))() 
