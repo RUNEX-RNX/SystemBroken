@@ -1,8 +1,10 @@
+--RELOAD GUI
 if game.CoreGui:FindFirstChild("SysBroker") then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "LoL System",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
 	return
 end
-local version = 1.0.0
+local version = 2
+--VARIABLES
 _G.AntiFlingToggled = false
 local Players = game:GetService("Players")
 local plr = Players.LocalPlayer
@@ -1135,7 +1137,7 @@ TargetName_Input.Position = UDim2.new(0, 150, 0, 30)
 TargetName_Input.Size = UDim2.new(0, 175, 0, 30)
 TargetName_Input.Font = Enum.Font.Gotham
 TargetName_Input.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-TargetName_Input.PlaceholderText = "target..."
+TargetName_Input.PlaceholderText = "@target..."
 TargetName_Input.Text = ""
 TargetName_Input.TextColor3 = Color3.fromRGB(20, 20, 20)
 TargetName_Input.TextSize = 14.000
@@ -1904,7 +1906,7 @@ Credits_Label.BorderSizePixel = 0
 Credits_Label.Position = UDim2.new(0, 25, 0, 150)
 Credits_Label.Size = UDim2.new(0, 350, 0, 150)
 Credits_Label.Font = Enum.Font.SourceSans
-Credits_Label.Text = "Made by: RUNEX \nTelegram: RUNEX X SCRIPT \nVersion: "..version
+Credits_Label.Text = "Made by: MalwareHUB \nDiscord: system_calix\nVersion: "..version
 Credits_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Credits_Label.TextSize = 24.000
 Credits_Label.TextWrapped = true
@@ -2533,7 +2535,7 @@ WalkSpeed_Button.MouseButton1Click:Connect(function()
 			Speed = 16
 		end
 		plr.Character.Humanoid.WalkSpeed = tonumber(Speed)
-		SendNotify("LoL System","Walk speed updated.",5)
+		SendNotify("LoL System","Walk speed updated",5)
 	end)
 end)
 
@@ -2544,7 +2546,7 @@ JumpPower_Button.MouseButton1Click:Connect(function()
 			Power = 50
 		end
 		plr.Character.Humanoid.JumpPower = tonumber(Power)
-		SendNotify("LoL System","Jump power updated.",5)
+		SendNotify("LoL System","Jump power updated",5)
 	end)
 end)
 
@@ -2568,12 +2570,12 @@ end)
 
 SaveCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = GetRoot(plr).Position
-	SendNotify("LoL System","Checkpoint saved.",5)
+	SendNotify("LoL System","Checkpoint saved",5)
 end)
 
 ClearCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = nil
-	SendNotify("LoL System","Checkpoint cleared.",5)
+	SendNotify("LoL System","Checkpoint deleted",5)
 end)
 
 local flying = true
@@ -3309,7 +3311,7 @@ AntiFling_Button.MouseButton1Click:Connect(function()
 	ChangeToggleColor(AntiFling_Button)
 	if AntiFling_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		_G.AntiFlingToggled = true
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/AntiFling"))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/AntiFling'))()
 	else
 		_G.AntiFlingToggled = false
 	end
@@ -3427,7 +3429,7 @@ end)
 FreeEmotes_Button.MouseButton1Click:Connect(function()
 	if not FreeEmotesEnabled then
 		FreeEmotesEnabled = true
-		SendNotify("LoL System","Loading free emotes.\nCredits: Midway")
+		SendNotify("LoL System","Loading free emotes.\nCredits: RUNEX")
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/AllEmote"))()
 	end
 end)
@@ -3500,7 +3502,6 @@ plr.CharacterAdded:Connect(function(x)
 		KeyUpFunction:Disconnect()
 		SendNotify("LoL System","Fly was automatically disabled due to your character respawn",5)
 	end
-	end
 	x.Humanoid.Died:Connect(function()
 		pcall(function()
 			x["Pushed"].Disabled = false
@@ -3512,7 +3513,7 @@ end)
 task.spawn(function()
 	while task.wait(10) do
 		pcall(function()
-			local GuiVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/version"))()
+			local GuiVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/version"))()
 			if version<GuiVersion then
 				SendNotify("LoL System","You are not using the latest version, please run the script again.",5)
 				task.wait(5)
@@ -3534,7 +3535,6 @@ game:GetService("UserInputService").InputBegan:Connect(function(input,gameProces
 	end
 end)
 
-SendNotify("LoL System","Developer RUNEX \nTelegram RUNEX X SCRIPT",10)
-setclipboard("https://t.me/RUNEX_X_SCRIPT")
-
+SendNotify("LoL System","RUNEX project \nGood Luck have fun",10)
+setclipboard("https://discord.gg/RkhpySwNR9")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/premium"))() 
