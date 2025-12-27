@@ -1,9 +1,8 @@
-if game.CoreGui:FindFirstChild("LoLSystm") then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "LoLSystm",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
+if game.CoreGui:FindFirstChild("SysBroker") then
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "LoL System",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
 	return
 end
 local version = 1.0.0
-
 _G.AntiFlingToggled = false
 local Players = game:GetService("Players")
 local plr = Players.LocalPlayer
@@ -251,7 +250,7 @@ end
 
 --LOAD GUI
 task.wait(0.1)
-local LoLSystm = Instance.new("ScreenGui")
+local SysBroker = Instance.new("ScreenGui")
 local Background = Instance.new("ImageLabel")
 local TitleBarLabel = Instance.new("TextLabel")
 local SectionList = Instance.new("Frame")
@@ -334,12 +333,14 @@ local PirateAnim_Button = Instance.new("TextButton")
 local SneakyAnim_Button = Instance.new("TextButton")
 local ToyAnim_Button = Instance.new("TextButton")
 local KnightAnim_Button = Instance.new("TextButton")
+--NEWS
 local ConfidentAnim_Button = Instance.new("TextButton")
 local PopstarAnim_Button = Instance.new("TextButton")
 local PrincessAnim_Button = Instance.new("TextButton")
 local CowboyAnim_Button = Instance.new("TextButton")
 local PatrolAnim_Button = Instance.new("TextButton")
 local ZombieFEAnim_Button = Instance.new("TextButton")
+--NEWS
 local Misc_Section = Instance.new("ScrollingFrame")
 local AntiFling_Button = Instance.new("TextButton")
 local AntiChatSpy_Button = Instance.new("TextButton")
@@ -380,12 +381,12 @@ local function CreateClicker(Button)
 	NewClicker.Parent = Button
 end
 
-LoLSystm.Name = "LoLSystm"
-LoLSystm.Parent = game.CoreGui
-LoLSystm.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SysBroker.Name = "SysBroker"
+SysBroker.Parent = game.CoreGui
+SysBroker.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Background.Name = "Background"
-Background.Parent = LoLSystm
+Background.Parent = SysBroker
 Background.AnchorPoint = Vector2.new(0.5, 0.5)
 Background.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 Background.BorderColor3 = Color3.fromRGB(0, 255, 255)
@@ -409,7 +410,7 @@ TitleBarLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TitleBarLabel.BorderSizePixel = 0
 TitleBarLabel.Size = UDim2.new(1, 0, 0, 30)
 TitleBarLabel.Font = Enum.Font.Unknown
-TitleBarLabel.Text = "____/LoL System\__/RUNEX\___"
+TitleBarLabel.Text = "____/SYSTEMBROKEN\\___"
 TitleBarLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
 TitleBarLabel.TextScaled = true
 TitleBarLabel.TextSize = 14.000
@@ -919,7 +920,7 @@ Welcome_Label.BorderSizePixel = 0
 Welcome_Label.Position = UDim2.new(0, 150, 0, 25)
 Welcome_Label.Size = UDim2.new(0, 200, 0, 100)
 Welcome_Label.Font = Enum.Font.SourceSans
-Welcome_Label.Text = ("Hello "..plr.Name.."!\nThanks for using my script \n Join Telegram channel RUNEX X SCRIPT for more scripts! \nPress [B] to close or open GUI")
+Welcome_Label.Text = ("Hello "..plr.Name.."! \n Thanks for using my script \nTelegram channel RUNEX X SCRIPT join for more scripts! \nPress [B] to open|close GUI")
 Welcome_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Welcome_Label.TextSize = 24.000
 Welcome_Label.TextWrapped = true
@@ -1903,7 +1904,7 @@ Credits_Label.BorderSizePixel = 0
 Credits_Label.Position = UDim2.new(0, 25, 0, 150)
 Credits_Label.Size = UDim2.new(0, 350, 0, 150)
 Credits_Label.Font = Enum.Font.SourceSans
-Credits_Label.Text = "Made by: RUNEX \nA few scripts created Midwya \nTelegram: RUNEX X SCRIPT\nVersion: "..version
+Credits_Label.Text = "Made by: RUNEX \nTelegram: RUNEX X SCRIPT \nVersion: "..version
 Credits_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Credits_Label.TextSize = 24.000
 Credits_Label.TextWrapped = true
@@ -1923,7 +1924,7 @@ Crown.Image = "rbxassetid://12298407748"
 Crown.ImageColor3 = Color3.fromRGB(0, 255, 255)
 
 Assets.Name = "Assets"
-Assets.Parent = LoLSystm
+Assets.Parent = SysBroker
 
 Ticket_Asset.Name = "Ticket_Asset"
 Ticket_Asset.Parent = Assets
@@ -2030,7 +2031,7 @@ FlySButton.TextSize = 25.000
 FlySButton.TextWrapped = true
 
 OpenClose.Name = "OpenClose"
-OpenClose.Parent = LoLSystm
+OpenClose.Parent = SysBroker
 OpenClose.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 OpenClose.BorderColor3 = Color3.fromRGB(0, 0, 0)
 OpenClose.BorderSizePixel = 0
@@ -2147,7 +2148,7 @@ end
 local function UpdateTarget(player)
 	pcall(function()
 		if table.find(ForceWhitelist,player.UserId) then
-			SendNotify("LoLSystm","You cant target this player: "..player.Name.." / "..player.DisplayName,5)
+			SendNotify("LoL System","You cant target this player: @"..player.Name.." / "..player.DisplayName,5)
 			player = nil
 		end
 	end)
@@ -2157,7 +2158,7 @@ local function UpdateTarget(player)
 		UserIDTargetLabel.Text = ("UserID: "..player.UserId.."\nDisplay: "..player.DisplayName.."\nJoined: "..os.date("%d-%m-%Y", os.time()-player.AccountAge * 24 * 3600).." [Day/Month/Year]")
 		TargetImage.Image = Players:GetUserThumbnailAsync(player.UserId,Enum.ThumbnailType.HeadShot,Enum.ThumbnailSize.Size420x420)
 	else
-		TargetName_Input.Text = "target..."
+		TargetName_Input.Text = "@target..."
 		UserIDTargetLabel.Text = "UserID: \nDisplay: \nJoined: "
 		TargetImage.Image = "rbxassetid://10818605405"
 		TargetedPlayer = nil
@@ -2196,6 +2197,7 @@ local function ToggleFling(bool)
 	end)
 end
 
+--CHANGE SECTION BUTTONS
 ChangeSection(Home_Section_Button)
 Home_Section_Button.MouseButton1Click:Connect(function()
 	ChangeSection(Home_Section_Button)
@@ -2225,7 +2227,7 @@ Credits_Section_Button.MouseButton1Click:Connect(function()
 	ChangeSection(Credits_Section_Button)
 end)
 
-
+--GAME SECTION BUTTONS
 AntiRagdollFunction = nil
 AntiRagdoll_Button.MouseButton1Click:Connect(function()
 	ChangeToggleColor(AntiRagdoll_Button)
@@ -2518,7 +2520,7 @@ end)
 CMDBar.FocusLost:Connect(function()
 	command = CMDBar.Text
 	Players:Chat(command)
-	SendNotify("LoL Script",("Executed "..command),5)
+	SendNotify("LoL System",("Executed "..command),5)
 	CMDBar.Text = ""
 end)
 
@@ -2531,7 +2533,7 @@ WalkSpeed_Button.MouseButton1Click:Connect(function()
 			Speed = 16
 		end
 		plr.Character.Humanoid.WalkSpeed = tonumber(Speed)
-		SendNotify("LoL Script","Walk speed set",5)
+		SendNotify("LoL System","Walk speed updated.",5)
 	end)
 end)
 
@@ -2542,7 +2544,7 @@ JumpPower_Button.MouseButton1Click:Connect(function()
 			Power = 50
 		end
 		plr.Character.Humanoid.JumpPower = tonumber(Power)
-		SendNotify("LoL Script","Jump power set",5)
+		SendNotify("LoL System","Jump power updated.",5)
 	end)
 end)
 
@@ -2553,7 +2555,7 @@ FlySpeed_Button.MouseButton1Click:Connect(function()
 			Speed = 50
 		end
 		FlySpeed = tonumber(Speed)
-		SendNotify("LoL Script","Fly speed set",5)
+		SendNotify("LoL System","Fly speed updated.",5)
 	end)
 end)
 
@@ -2566,12 +2568,12 @@ end)
 
 SaveCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = GetRoot(plr).Position
-	SendNotify("LoL Script","Checkpoint saved.",5)
+	SendNotify("LoL System","Checkpoint saved.",5)
 end)
 
 ClearCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = nil
-	SendNotify("LoL Script","Checkpoint Delete",5)
+	SendNotify("LoL System","Checkpoint cleared.",5)
 end)
 
 local flying = true
@@ -2965,10 +2967,10 @@ WhitelistTarget_Button.MouseButton1Click:Connect(function()
 					table.remove(ScriptWhitelist, i)
 				end
 			end
-			SendNotify("LoL Script",TargetedPlayer.." removed from whitelist.",5)
+			SendNotify("LoL System",TargetedPlayer.." removed from whitelist.",5)
 		else
 			table.insert(ScriptWhitelist, Players[TargetedPlayer].UserId)
-			SendNotify("LoL Script",TargetedPlayer.." added to whitelist.", 5)
+			SendNotify("LoL System",TargetedPlayer.." added to whitelist.", 5)
 		end
 	end
 end)
@@ -3389,7 +3391,7 @@ Day_Button.MouseButton1Click:Connect(function()
 	if Shaders_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(255,0,0) then
 		game:GetService("Lighting").ClockTime = 14
 	else
-		SendNotify("LoL Script","Please turn off shaders.",5)
+		SendNotify("LoL System","Please turn off shaders.",5)
 	end
 end)
 
@@ -3397,7 +3399,7 @@ Night_Button.MouseButton1Click:Connect(function()
 	if Shaders_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(255,0,0) then
 		game:GetService("Lighting").ClockTime = 19
 	else
-		SendNotify("LoL Script","Please turn off shaders.",5)
+		SendNotify("LoL System","Please turn off shaders.",5)
 	end
 end)
 
@@ -3425,8 +3427,8 @@ end)
 FreeEmotes_Button.MouseButton1Click:Connect(function()
 	if not FreeEmotesEnabled then
 		FreeEmotesEnabled = true
-		SendNotify("LoL Script","Loading free emotes.\nCredits: Midway")
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/AllEmotes"))()
+		SendNotify("LoL System","Loading free emotes.\nCredits: Midway")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/AllEmote"))()
 	end
 end)
 
@@ -3463,7 +3465,7 @@ Players.PlayerRemoving:Connect(function(player)
 	pcall(function()
 		if player.Name == TargetedPlayer then
 			UpdateTarget(nil)
-			SendNotify("LoL Script","Targeted player left/rejoined.",5)
+			SendNotify("LoL System","Targeted player left/rejoined.",5)
 		end
 	end)
 end)
@@ -3476,19 +3478,19 @@ plr.CharacterAdded:Connect(function(x)
 	end
 	if PotionDi_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(PotionDi_Button)
-		SendNotify("LoL Script","PotionDick was automatically disabled due to your character respawn",5)
+		SendNotify("LoL System","PotionDick was automatically disabled due to your character respawn",5)
 	end
 	if PotionFling_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(PotionFling_Button)
-		SendNotify("LoL Script","PotionFling was automatically disabled due to your character respawn",5)
+		SendNotify("LoL System","PotionFling was automatically disabled due to your character respawn",5)
 	end
 	if AntiRagdoll_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(AntiRagdoll_Button)
-		SendNotify("LoL Script","AntiRagdoll was automatically disabled due to your character respawn",5)
+		SendNotify("LoL System","AntiRagdoll was automatically disabled due to your character respawn",5)
 	end
 	if SpamMines_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(SpamMines_Button)
-		SendNotify("LoL Script","SpamMines was automatically disabled due to your character respawn",5)
+		SendNotify("LoL System","SpamMines was automatically disabled due to your character respawn",5)
 	end
 	if Fly_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(Fly_Button)
@@ -3496,7 +3498,8 @@ plr.CharacterAdded:Connect(function(x)
 		Fly_Pad.Visible = false
 		KeyDownFunction:Disconnect()
 		KeyUpFunction:Disconnect()
-		SendNotify("LoL Script","Fly was automatically disabled due to your character respawn",5)
+		SendNotify("LoL System","Fly was automatically disabled due to your character respawn",5)
+	end
 	end
 	x.Humanoid.Died:Connect(function()
 		pcall(function()
@@ -3511,9 +3514,9 @@ task.spawn(function()
 		pcall(function()
 			local GuiVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/version"))()
 			if version<GuiVersion then
-				SendNotify("LoL Script","You are not using the latest version, please run the script again.",5)
+				SendNotify("LoL System","You are not using the latest version, please run the script again.",5)
 				task.wait(5)
-				LoLSystm:Destroy()
+				SysBroker:Destroy()
 				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
 			end
 		end)
@@ -3533,7 +3536,7 @@ end)
 
 game.StarterGui:SetCore("SendNotification", {
     Title = "LoL System\nRUNEX project";
-    Text = "\nGood luck have fun";
+    Text = "\nGood Luck have Fun";
     Duration = 8;
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/premium"))() -- load the premium
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/premium"))() 
