@@ -1,10 +1,9 @@
---RELOAD GUI
 if game.CoreGui:FindFirstChild("SysBroker") then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "LoL System",Text = "GUI Already loaded, rejoin to re-execute",Duration = 10;})
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "LoL System",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
 	return
 end
 local version = 1.0.0
---VARIABLES
+
 _G.AntiFlingToggled = false
 local Players = game:GetService("Players")
 local plr = Players.LocalPlayer
@@ -412,7 +411,7 @@ TitleBarLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TitleBarLabel.BorderSizePixel = 0
 TitleBarLabel.Size = UDim2.new(1, 0, 0, 30)
 TitleBarLabel.Font = Enum.Font.Unknown
-TitleBarLabel.Text = "____/SYSTEMBROKEN\\___"
+TitleBarLabel.Text = "__/LoL Script\__/RUNEX\_"
 TitleBarLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
 TitleBarLabel.TextScaled = true
 TitleBarLabel.TextSize = 14.000
@@ -922,7 +921,7 @@ Welcome_Label.BorderSizePixel = 0
 Welcome_Label.Position = UDim2.new(0, 150, 0, 25)
 Welcome_Label.Size = UDim2.new(0, 200, 0, 100)
 Welcome_Label.Font = Enum.Font.SourceSans
-Welcome_Label.Text = ("Hello "..plr.Name.."! \n Thanks for using my script \nTelegram channel RUNEX X SCRIPT join for more scripts! \nPress [B] to open|close GUI")
+Welcome_Label.Text = ("Hello "..plr.Name.."! \nThanks for using my script join Telegram channel RUNEX X SCRIPT join for more scripts! \nPress [B] to open|close GUI")
 Welcome_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Welcome_Label.TextSize = 24.000
 Welcome_Label.TextWrapped = true
@@ -981,7 +980,7 @@ WalkSpeed_Input.Position = UDim2.new(0, 210, 0, 25)
 WalkSpeed_Input.Size = UDim2.new(0, 175, 0, 30)
 WalkSpeed_Input.Font = Enum.Font.Gotham
 WalkSpeed_Input.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-WalkSpeed_Input.PlaceholderText = "Number [1-99999]"
+WalkSpeed_Input.PlaceholderText = "§1-99999"
 WalkSpeed_Input.Text = ""
 WalkSpeed_Input.TextColor3 = Color3.fromRGB(20, 20, 20)
 WalkSpeed_Input.TextSize = 14.000
@@ -1011,7 +1010,7 @@ JumpPower_Input.Position = UDim2.new(0, 210, 0, 75)
 JumpPower_Input.Size = UDim2.new(0, 175, 0, 30)
 JumpPower_Input.Font = Enum.Font.Gotham
 JumpPower_Input.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-JumpPower_Input.PlaceholderText = "Number [1-99999]"
+JumpPower_Input.PlaceholderText = "§1-99999"
 JumpPower_Input.Text = ""
 JumpPower_Input.TextColor3 = Color3.fromRGB(20, 20, 20)
 JumpPower_Input.TextSize = 14.000
@@ -1086,7 +1085,7 @@ FlySpeed_Input.Position = UDim2.new(0, 210, 0, 125)
 FlySpeed_Input.Size = UDim2.new(0, 175, 0, 30)
 FlySpeed_Input.Font = Enum.Font.Gotham
 FlySpeed_Input.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-FlySpeed_Input.PlaceholderText = "Number [1-99999]"
+FlySpeed_Input.PlaceholderText = "§1-99999"
 FlySpeed_Input.Text = ""
 FlySpeed_Input.TextColor3 = Color3.fromRGB(20, 20, 20)
 FlySpeed_Input.TextSize = 14.000
@@ -1137,7 +1136,7 @@ TargetName_Input.Position = UDim2.new(0, 150, 0, 30)
 TargetName_Input.Size = UDim2.new(0, 175, 0, 30)
 TargetName_Input.Font = Enum.Font.Gotham
 TargetName_Input.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-TargetName_Input.PlaceholderText = "@target..."
+TargetName_Input.PlaceholderText = "target..."
 TargetName_Input.Text = ""
 TargetName_Input.TextColor3 = Color3.fromRGB(20, 20, 20)
 TargetName_Input.TextSize = 14.000
@@ -1906,7 +1905,7 @@ Credits_Label.BorderSizePixel = 0
 Credits_Label.Position = UDim2.new(0, 25, 0, 150)
 Credits_Label.Size = UDim2.new(0, 350, 0, 150)
 Credits_Label.Font = Enum.Font.SourceSans
-Credits_Label.Text = "Made by: MalwareHUB \nDiscord: system_calix\nVersion: "..version
+Credits_Label.Text = "Owner: RUNEX \nDeveloper RUNEX and Midway_roblox \nJoin Telegram RUNEX X SCRIPT \nVersion: "..version
 Credits_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Credits_Label.TextSize = 24.000
 Credits_Label.TextWrapped = true
@@ -2150,7 +2149,7 @@ end
 local function UpdateTarget(player)
 	pcall(function()
 		if table.find(ForceWhitelist,player.UserId) then
-			SendNotify("LoL System","You cant target this player: @"..player.Name.." / "..player.DisplayName,5)
+			SendNotify("LoL System","You cant target this player: "..player.Name.." / "..player.DisplayName,5)
 			player = nil
 		end
 	end)
@@ -2160,7 +2159,7 @@ local function UpdateTarget(player)
 		UserIDTargetLabel.Text = ("UserID: "..player.UserId.."\nDisplay: "..player.DisplayName.."\nJoined: "..os.date("%d-%m-%Y", os.time()-player.AccountAge * 24 * 3600).." [Day/Month/Year]")
 		TargetImage.Image = Players:GetUserThumbnailAsync(player.UserId,Enum.ThumbnailType.HeadShot,Enum.ThumbnailSize.Size420x420)
 	else
-		TargetName_Input.Text = "@target..."
+		TargetName_Input.Text = "target..."
 		UserIDTargetLabel.Text = "UserID: \nDisplay: \nJoined: "
 		TargetImage.Image = "rbxassetid://10818605405"
 		TargetedPlayer = nil
@@ -2535,7 +2534,7 @@ WalkSpeed_Button.MouseButton1Click:Connect(function()
 			Speed = 16
 		end
 		plr.Character.Humanoid.WalkSpeed = tonumber(Speed)
-		SendNotify("LoL System","Walk speed updated",5)
+		SendNotify("LoL System","Walk speed updated.",5)
 	end)
 end)
 
@@ -2546,7 +2545,7 @@ JumpPower_Button.MouseButton1Click:Connect(function()
 			Power = 50
 		end
 		plr.Character.Humanoid.JumpPower = tonumber(Power)
-		SendNotify("LoL System","Jump power updated",5)
+		SendNotify("LoL System","Jump power updated.",5)
 	end)
 end)
 
@@ -2570,12 +2569,12 @@ end)
 
 SaveCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = GetRoot(plr).Position
-	SendNotify("LoL System","Checkpoint saved",5)
+	SendNotify("LoL System","Checkpoint saved.",5)
 end)
 
 ClearCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = nil
-	SendNotify("LoL System","Checkpoint deleted",5)
+	SendNotify("LoL System","Checkpoint cleared.",5)
 end)
 
 local flying = true
@@ -3393,7 +3392,7 @@ Day_Button.MouseButton1Click:Connect(function()
 	if Shaders_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(255,0,0) then
 		game:GetService("Lighting").ClockTime = 14
 	else
-		SendNotify("LoL System","Please turn off shaders.",5)
+		SendNotify("LoL System","Please turn off shaders.",5) 
 	end
 end)
 
@@ -3513,7 +3512,7 @@ end)
 task.spawn(function()
 	while task.wait(10) do
 		pcall(function()
-			local GuiVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/version"))()
+			local GuiVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/version"))()
 			if version<GuiVersion then
 				SendNotify("LoL System","You are not using the latest version, please run the script again.",5)
 				task.wait(5)
@@ -3536,5 +3535,5 @@ game:GetService("UserInputService").InputBegan:Connect(function(input,gameProces
 end)
 
 SendNotify("LoL System","RUNEX project \nGood Luck have fun",10)
-setclipboard("https://t.me/RUNEX_X_SCRIPT)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/premium"))() 
+setclipboard("https://t.me/RUNEX_X_SCRIPT")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/premium"))()
