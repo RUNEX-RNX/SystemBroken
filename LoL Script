@@ -1,8 +1,9 @@
-if game.CoreGui:FindFirstChild("LoLscript") then
+if game.CoreGui:FindFirstChild("LoLScript") then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "LoL Script",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
 	return
 end
-local version = 1.0.0
+local version = 1
+
 _G.AntiFlingToggled = false
 local Players = game:GetService("Players")
 local plr = Players.LocalPlayer
@@ -250,7 +251,7 @@ end
 
 --LOAD GUI
 task.wait(0.1)
-local LoLscript = Instance.new("ScreenGui")
+local LoLScript = Instance.new("ScreenGui")
 local Background = Instance.new("ImageLabel")
 local TitleBarLabel = Instance.new("TextLabel")
 local SectionList = Instance.new("Frame")
@@ -381,12 +382,12 @@ local function CreateClicker(Button)
 	NewClicker.Parent = Button
 end
 
-LoLscript.Name = "LoLscript"
-LoLscript.Parent = game.CoreGui
-LoLscript.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LoLScript.Name = "LoLScript"
+LoLScript.Parent = game.CoreGui
+LoLScript.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Background.Name = "Background"
-Background.Parent = LoLscript
+Background.Parent = LoLScript
 Background.AnchorPoint = Vector2.new(0.5, 0.5)
 Background.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 Background.BorderColor3 = Color3.fromRGB(0, 255, 255)
@@ -410,7 +411,7 @@ TitleBarLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TitleBarLabel.BorderSizePixel = 0
 TitleBarLabel.Size = UDim2.new(1, 0, 0, 30)
 TitleBarLabel.Font = Enum.Font.Unknown
-TitleBarLabel.Text = "____/RUNEX LoL Script\___"
+TitleBarLabel.Text = "____/LoL System\__/RUNEX\__"
 TitleBarLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
 TitleBarLabel.TextScaled = true
 TitleBarLabel.TextSize = 14.000
@@ -920,7 +921,7 @@ Welcome_Label.BorderSizePixel = 0
 Welcome_Label.Position = UDim2.new(0, 150, 0, 25)
 Welcome_Label.Size = UDim2.new(0, 200, 0, 100)
 Welcome_Label.Font = Enum.Font.SourceSans
-Welcome_Label.Text = ("Hello "..plr.Name.."!\nPress [B] to open or close gui")
+Welcome_Label.Text = ("¡Hello @"..plr.Name.."!\nPress [B] to open/close gui.")
 Welcome_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Welcome_Label.TextSize = 24.000
 Welcome_Label.TextWrapped = true
@@ -935,7 +936,7 @@ Announce_Label.BorderSizePixel = 0
 Announce_Label.Position = UDim2.new(0, 25, 0, 150)
 Announce_Label.Size = UDim2.new(0, 350, 0, 150)
 Announce_Label.Font = Enum.Font.SourceSans
-Announce_Label.Text = loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/SystemBroken/refs/heads/main/announce"))()
+Announce_Label.Text = loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/announce"))()
 Announce_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Announce_Label.TextSize = 24.000
 Announce_Label.TextWrapped = true
@@ -994,7 +995,7 @@ ClearCheckpoint_Button.BorderSizePixel = 0
 ClearCheckpoint_Button.Position = UDim2.new(0, 210, 0, 225)
 ClearCheckpoint_Button.Size = UDim2.new(0, 150, 0, 30)
 ClearCheckpoint_Button.Font = Enum.Font.Oswald
-ClearCheckpoint_Button.Text = "Delete checkpoint"
+ClearCheckpoint_Button.Text = "Clear checkpoint"
 ClearCheckpoint_Button.TextColor3 = Color3.fromRGB(0, 0, 0)
 ClearCheckpoint_Button.TextScaled = true
 ClearCheckpoint_Button.TextSize = 14.000
@@ -1399,7 +1400,7 @@ ZombieClassicAnim_Button.BorderSizePixel = 0
 ZombieClassicAnim_Button.Position = UDim2.new(0, 25, 0, 75)
 ZombieClassicAnim_Button.Size = UDim2.new(0, 150, 0, 30)
 ZombieClassicAnim_Button.Font = Enum.Font.Oswald
-ZombieClassicAnim_Button.Text = "Zombie"
+ZombieClassicAnim_Button.Text = "Zombie Classic"
 ZombieClassicAnim_Button.TextColor3 = Color3.fromRGB(0, 0, 0)
 ZombieClassicAnim_Button.TextScaled = true
 ZombieClassicAnim_Button.TextSize = 14.000
@@ -1497,8 +1498,8 @@ NinjaAnim_Button.TextWrapped = true
 
 WerewolfAnim_Button.Name = "WerewolfAnim_Button"
 WerewolfAnim_Button.Parent = Animations_Section
-WerewolfAnim_Button.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-WerewolfAnim_Button.BackgroundTransparency = 0.500
+WerewolfAnim_Button.Backgr I'moundColor3 = Color3.fromRGB(0, 255, 255)
+ = 0.500
 WerewolfAnim_Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WerewolfAnim_Button.BorderSizePixel = 0
 WerewolfAnim_Button.Position = UDim2.new(0, 210, 0, 225)
@@ -1670,21 +1671,6 @@ ZombieFEAnim_Button.Position = UDim2.new(0, 25, 0, 525)
 ZombieFEAnim_Button.Size = UDim2.new(0, 150, 0, 30)
 ZombieFEAnim_Button.Font = Enum.Font.Oswald
 ZombieFEAnim_Button.Text = "FE Zombie"
-ZombieFEAnim_Button.TextColor3 = Color3.fromRGB(0, 0, 0)
-ZombieFEAnim_Button.TextScaled = true
-ZombieFEAnim_Button.TextSize = 14.000
-ZombieFEAnim_Button.TextWrapped = true
-
-ZombieFEAnim_Button.Name = "ZombieFEAnim_Button"
-ZombieFEAnim_Button.Parent = Animations_Section
-ZombieFEAnim_Button.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-ZombieFEAnim_Button.BackgroundTransparency = 0.500
-ZombieFEAnim_Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ZombieFEAnim_Button.BorderSizePixel = 0
-ZombieFEAnim_Button.Position = UDim2.new(0, 25, 0, 525)
-ZombieFEAnim_Button.Size = UDim2.new(0, 150, 0, 30)
-ZombieFEAnim_Button.Font = Enum.Font.Oswald
-ZombieFEAnim_Button.Text = "Adidas Aura"
 ZombieFEAnim_Button.TextColor3 = Color3.fromRGB(0, 0, 0)
 ZombieFEAnim_Button.TextScaled = true
 ZombieFEAnim_Button.TextSize = 14.000
@@ -1919,7 +1905,7 @@ Credits_Label.BorderSizePixel = 0
 Credits_Label.Position = UDim2.new(0, 25, 0, 150)
 Credits_Label.Size = UDim2.new(0, 350, 0, 150)
 Credits_Label.Font = Enum.Font.SourceSans
-Credits_Label.Text = "Made by: RUNEX \nTelegram: RUNEX_X_SCRIPT \nJoin for more script \nVersion: "..version
+Credits_Label.Text = "Made by: RUNEX \nTelegram: RUNEX X SCRIPTS \nJoin for more scripts \nVersion: "..version
 Credits_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Credits_Label.TextSize = 24.000
 Credits_Label.TextWrapped = true
@@ -1939,7 +1925,7 @@ Crown.Image = "rbxassetid://12298407748"
 Crown.ImageColor3 = Color3.fromRGB(0, 255, 255)
 
 Assets.Name = "Assets"
-Assets.Parent = LoLscript
+Assets.Parent = LoLScript
 
 Ticket_Asset.Name = "Ticket_Asset"
 Ticket_Asset.Parent = Assets
@@ -2046,7 +2032,7 @@ FlySButton.TextSize = 25.000
 FlySButton.TextWrapped = true
 
 OpenClose.Name = "OpenClose"
-OpenClose.Parent = LoLscript
+OpenClose.Parent = LoLScript
 OpenClose.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 OpenClose.BorderColor3 = Color3.fromRGB(0, 0, 0)
 OpenClose.BorderSizePixel = 0
@@ -2583,12 +2569,12 @@ end)
 
 SaveCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = GetRoot(plr).Position
-	SendNotify("LoL Script","Checkpoint saved.",5)
+	SendNotify("LoL Script","Checkpoint saved",5)
 end)
 
 ClearCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = nil
-	SendNotify("LoL Script","Checkpoint deleted",5)
+	SendNotify("LoL Script","Checkpoint delete",5)
 end)
 
 local flying = true
@@ -3324,7 +3310,7 @@ AntiFling_Button.MouseButton1Click:Connect(function()
 	ChangeToggleColor(AntiFling_Button)
 	if AntiFling_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		_G.AntiFlingToggled = true
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/SystemBroken/refs/heads/main/AntiFling"))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/AntiFling'))()
 	else
 		_G.AntiFlingToggled = false
 	end
@@ -3419,7 +3405,7 @@ Night_Button.MouseButton1Click:Connect(function()
 end)
 
 InfYield_Button.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
 CMDX_Button.MouseButton1Click:Connect(function()
@@ -3442,8 +3428,8 @@ end)
 FreeEmotes_Button.MouseButton1Click:Connect(function()
 	if not FreeEmotesEnabled then
 		FreeEmotesEnabled = true
-		SendNotify("LoL Script","Loading free emotes.\nCredits: Gi#7331")
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/SystemBroken/refs/heads/main/AllEmote"))()
+		SendNotify("LoL Script","Loading free emotes.\nCredits: Midway")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/AllEmote"))()
 	end
 end)
 
@@ -3493,19 +3479,19 @@ plr.CharacterAdded:Connect(function(x)
 	end
 	if PotionDi_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(PotionDi_Button)
-		SendNotify("LoL Script","PotionDick was automatically disabled due to respawning",5)
+		SendNotify("LoL Script","PotionDick was automatically disabled due to your character respawn",5)
 	end
 	if PotionFling_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(PotionFling_Button)
-		SendNotify("LoL Script","PotionFling was automatically disabled due to respawning",5)
+		SendNotify("LoL Script","PotionFling was automatically disabled due to your character respawn",5)
 	end
 	if AntiRagdoll_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(AntiRagdoll_Button)
-		SendNotify("LoL Script","AntiRagdoll was automatically disabled due to respawning",5)
+		SendNotify("LoL Script","AntiRagdoll was automatically disabled due to your character respawn",5)
 	end
 	if SpamMines_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(SpamMines_Button)
-		SendNotify("LoL Script","SpamMines was automatically disabled due to respawning",5)
+		SendNotify("LoL Script","SpamMines was automatically disabled due to your character respawn",5)
 	end
 	if Fly_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(Fly_Button)
@@ -3513,7 +3499,7 @@ plr.CharacterAdded:Connect(function(x)
 		Fly_Pad.Visible = false
 		KeyDownFunction:Disconnect()
 		KeyUpFunction:Disconnect()
-		SendNotify("LoL Script","Fly was automatically disabled due to respawning",5)
+		SendNotify("LoL Script","Fly was automatically disabled due to your character respawn",5)
 	end
 	x.Humanoid.Died:Connect(function()
 		pcall(function()
@@ -3526,11 +3512,11 @@ end)
 task.spawn(function()
 	while task.wait(10) do
 		pcall(function()
-			local GuiVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/SystemBroken/refs/heads/main/version"))()
+			local GuiVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/version"))()
 			if version<GuiVersion then
-				SendNotify("LoL Script","You are not using the latest version, please run the script again",5)
+				SendNotify("LoL Script","You are not using the latest version, please run the script again.",5)
 				task.wait(5)
-		        LoLscript:Destroy()
+				LoLScript:Destroy()
 				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
 			end
 		end)
@@ -3547,10 +3533,10 @@ game:GetService("UserInputService").InputBegan:Connect(function(input,gameProces
 		Background.Visible = not Background.Visible
 	end
 end)
+
 game.StarterGui:SetCore("SendNotification", {
-    Title = "LoL Script\nRUNEX Scripts";
-    Text = "Script for fun";
+    Title = "LoL Script\nDev RUNEX";
+    Text = "\nGood luck have fun";
     Duration = 8;
-})
-setclipboard("t.me/RUNEX_X_SCRIPT")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/SystemBroken/refs/heads/main/premium"))("t.me/RUNEX_X_SCRIPT")
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/premium"))()
