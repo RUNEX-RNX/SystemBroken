@@ -1,8 +1,8 @@
-if game.CoreGui:FindFirstChild("LoLScript") then
-	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "LoL Script",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
+if game.CoreGui:FindFirstChild("LoLSystm") then
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "LoLSystm",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
 	return
 end
-local version = 1
+local version = 1.0.0
 
 _G.AntiFlingToggled = false
 local Players = game:GetService("Players")
@@ -251,7 +251,7 @@ end
 
 --LOAD GUI
 task.wait(0.1)
-local LoLScript = Instance.new("ScreenGui")
+local LoLSystm = Instance.new("ScreenGui")
 local Background = Instance.new("ImageLabel")
 local TitleBarLabel = Instance.new("TextLabel")
 local SectionList = Instance.new("Frame")
@@ -334,14 +334,12 @@ local PirateAnim_Button = Instance.new("TextButton")
 local SneakyAnim_Button = Instance.new("TextButton")
 local ToyAnim_Button = Instance.new("TextButton")
 local KnightAnim_Button = Instance.new("TextButton")
---NEWS
 local ConfidentAnim_Button = Instance.new("TextButton")
 local PopstarAnim_Button = Instance.new("TextButton")
 local PrincessAnim_Button = Instance.new("TextButton")
 local CowboyAnim_Button = Instance.new("TextButton")
 local PatrolAnim_Button = Instance.new("TextButton")
 local ZombieFEAnim_Button = Instance.new("TextButton")
---NEWS
 local Misc_Section = Instance.new("ScrollingFrame")
 local AntiFling_Button = Instance.new("TextButton")
 local AntiChatSpy_Button = Instance.new("TextButton")
@@ -382,12 +380,12 @@ local function CreateClicker(Button)
 	NewClicker.Parent = Button
 end
 
-LoLScript.Name = "LoLScript"
-LoLScript.Parent = game.CoreGui
-LoLScript.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LoLSystm.Name = "LoLSystm"
+LoLSystm.Parent = game.CoreGui
+LoLSystm.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Background.Name = "Background"
-Background.Parent = LoLScript
+Background.Parent = LoLSystm
 Background.AnchorPoint = Vector2.new(0.5, 0.5)
 Background.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 Background.BorderColor3 = Color3.fromRGB(0, 255, 255)
@@ -411,7 +409,7 @@ TitleBarLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TitleBarLabel.BorderSizePixel = 0
 TitleBarLabel.Size = UDim2.new(1, 0, 0, 30)
 TitleBarLabel.Font = Enum.Font.Unknown
-TitleBarLabel.Text = "____/LoL System\__/RUNEX\__"
+TitleBarLabel.Text = "____/LoL System\__/RUNEX\___"
 TitleBarLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
 TitleBarLabel.TextScaled = true
 TitleBarLabel.TextSize = 14.000
@@ -921,7 +919,7 @@ Welcome_Label.BorderSizePixel = 0
 Welcome_Label.Position = UDim2.new(0, 150, 0, 25)
 Welcome_Label.Size = UDim2.new(0, 200, 0, 100)
 Welcome_Label.Font = Enum.Font.SourceSans
-Welcome_Label.Text = ("¡Hello @"..plr.Name.."!\nPress [B] to open/close gui.")
+Welcome_Label.Text = ("Hello "..plr.Name.."!\nThanks for using my script \n Join Telegram channel RUNEX X SCRIPT for more scripts! \nPress [B] to close or open GUI")
 Welcome_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Welcome_Label.TextSize = 24.000
 Welcome_Label.TextWrapped = true
@@ -1136,7 +1134,7 @@ TargetName_Input.Position = UDim2.new(0, 150, 0, 30)
 TargetName_Input.Size = UDim2.new(0, 175, 0, 30)
 TargetName_Input.Font = Enum.Font.Gotham
 TargetName_Input.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-TargetName_Input.PlaceholderText = "@target..."
+TargetName_Input.PlaceholderText = "target..."
 TargetName_Input.Text = ""
 TargetName_Input.TextColor3 = Color3.fromRGB(20, 20, 20)
 TargetName_Input.TextSize = 14.000
@@ -1498,8 +1496,8 @@ NinjaAnim_Button.TextWrapped = true
 
 WerewolfAnim_Button.Name = "WerewolfAnim_Button"
 WerewolfAnim_Button.Parent = Animations_Section
-WerewolfAnim_Button.Backgr I'moundColor3 = Color3.fromRGB(0, 255, 255)
- = 0.500
+WerewolfAnim_Button.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+WerewolfAnim_Button.BackgroundTransparency = 0.500
 WerewolfAnim_Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
 WerewolfAnim_Button.BorderSizePixel = 0
 WerewolfAnim_Button.Position = UDim2.new(0, 210, 0, 225)
@@ -1905,7 +1903,7 @@ Credits_Label.BorderSizePixel = 0
 Credits_Label.Position = UDim2.new(0, 25, 0, 150)
 Credits_Label.Size = UDim2.new(0, 350, 0, 150)
 Credits_Label.Font = Enum.Font.SourceSans
-Credits_Label.Text = "Made by: RUNEX \nTelegram: RUNEX X SCRIPTS \nJoin for more scripts \nVersion: "..version
+Credits_Label.Text = "Made by: RUNEX \nA few scripts created Midwya \nTelegram: RUNEX X SCRIPT\nVersion: "..version
 Credits_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Credits_Label.TextSize = 24.000
 Credits_Label.TextWrapped = true
@@ -1925,7 +1923,7 @@ Crown.Image = "rbxassetid://12298407748"
 Crown.ImageColor3 = Color3.fromRGB(0, 255, 255)
 
 Assets.Name = "Assets"
-Assets.Parent = LoLScript
+Assets.Parent = LoLSystm
 
 Ticket_Asset.Name = "Ticket_Asset"
 Ticket_Asset.Parent = Assets
@@ -2032,7 +2030,7 @@ FlySButton.TextSize = 25.000
 FlySButton.TextWrapped = true
 
 OpenClose.Name = "OpenClose"
-OpenClose.Parent = LoLScript
+OpenClose.Parent = LoLSystm
 OpenClose.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 OpenClose.BorderColor3 = Color3.fromRGB(0, 0, 0)
 OpenClose.BorderSizePixel = 0
@@ -2149,7 +2147,7 @@ end
 local function UpdateTarget(player)
 	pcall(function()
 		if table.find(ForceWhitelist,player.UserId) then
-			SendNotify("LoL Script","You cant target this player: "..player.Name.." / "..player.DisplayName,5)
+			SendNotify("LoLSystm","You cant target this player: "..player.Name.." / "..player.DisplayName,5)
 			player = nil
 		end
 	end)
@@ -2198,7 +2196,6 @@ local function ToggleFling(bool)
 	end)
 end
 
---CHANGE SECTION BUTTONS
 ChangeSection(Home_Section_Button)
 Home_Section_Button.MouseButton1Click:Connect(function()
 	ChangeSection(Home_Section_Button)
@@ -2228,7 +2225,7 @@ Credits_Section_Button.MouseButton1Click:Connect(function()
 	ChangeSection(Credits_Section_Button)
 end)
 
---GAME SECTION BUTTONS
+
 AntiRagdollFunction = nil
 AntiRagdoll_Button.MouseButton1Click:Connect(function()
 	ChangeToggleColor(AntiRagdoll_Button)
@@ -2569,12 +2566,12 @@ end)
 
 SaveCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = GetRoot(plr).Position
-	SendNotify("LoL Script","Checkpoint saved",5)
+	SendNotify("LoL Script","Checkpoint saved.",5)
 end)
 
 ClearCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = nil
-	SendNotify("LoL Script","Checkpoint delete",5)
+	SendNotify("LoL Script","Checkpoint Delete",5)
 end)
 
 local flying = true
@@ -3310,7 +3307,7 @@ AntiFling_Button.MouseButton1Click:Connect(function()
 	ChangeToggleColor(AntiFling_Button)
 	if AntiFling_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		_G.AntiFlingToggled = true
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/AntiFling'))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/AntiFling"))()
 	else
 		_G.AntiFlingToggled = false
 	end
@@ -3429,7 +3426,7 @@ FreeEmotes_Button.MouseButton1Click:Connect(function()
 	if not FreeEmotesEnabled then
 		FreeEmotesEnabled = true
 		SendNotify("LoL Script","Loading free emotes.\nCredits: Midway")
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/AllEmote"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/AllEmotes"))()
 	end
 end)
 
@@ -3466,7 +3463,7 @@ Players.PlayerRemoving:Connect(function(player)
 	pcall(function()
 		if player.Name == TargetedPlayer then
 			UpdateTarget(nil)
-			SendNotify("LoL Script","Targeted player left or rejoined.",5)
+			SendNotify("LoL Script","Targeted player left/rejoined.",5)
 		end
 	end)
 end)
@@ -3516,7 +3513,7 @@ task.spawn(function()
 			if version<GuiVersion then
 				SendNotify("LoL Script","You are not using the latest version, please run the script again.",5)
 				task.wait(5)
-				LoLScript:Destroy()
+				LoLSystm:Destroy()
 				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
 			end
 		end)
@@ -3535,8 +3532,8 @@ game:GetService("UserInputService").InputBegan:Connect(function(input,gameProces
 end)
 
 game.StarterGui:SetCore("SendNotification", {
-    Title = "LoL Script\nDev RUNEX";
+    Title = "LoL System\nRUNEX project";
     Text = "\nGood luck have fun";
     Duration = 8;
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/premium"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/premium"))() -- load the premium
