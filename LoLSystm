@@ -2,7 +2,7 @@ if game.CoreGui:FindFirstChild("SysBroker") then
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "LoL System",Text = "GUI Already loaded, rejoin to re-execute",Duration = 5;})
 	return
 end
-local version = 1.2.0
+local version = 2
 
 _G.AntiFlingToggled = false
 local Players = game:GetService("Players")
@@ -249,6 +249,7 @@ local function SendNotify(title, message, duration)
 	game:GetService("StarterGui"):SetCore("SendNotification", {Title = title,Text = message,Duration = duration;})
 end
 
+--LOAD GUI
 task.wait(0.1)
 local SysBroker = Instance.new("ScreenGui")
 local Background = Instance.new("ImageLabel")
@@ -408,7 +409,7 @@ TitleBarLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TitleBarLabel.BorderSizePixel = 0
 TitleBarLabel.Size = UDim2.new(1, 0, 0, 30)
 TitleBarLabel.Font = Enum.Font.Unknown
-TitleBarLabel.Text = "_______/🤣LoL System🤣\_______
+TitleBarLabel.Text = "____/LoL System\___"
 TitleBarLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
 TitleBarLabel.TextScaled = true
 TitleBarLabel.TextSize = 14.000
@@ -977,7 +978,7 @@ WalkSpeed_Input.Position = UDim2.new(0, 210, 0, 25)
 WalkSpeed_Input.Size = UDim2.new(0, 175, 0, 30)
 WalkSpeed_Input.Font = Enum.Font.Gotham
 WalkSpeed_Input.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-WalkSpeed_Input.PlaceholderText = "§ 1-99999"
+WalkSpeed_Input.PlaceholderText = "Number [1-99999]"
 WalkSpeed_Input.Text = ""
 WalkSpeed_Input.TextColor3 = Color3.fromRGB(20, 20, 20)
 WalkSpeed_Input.TextSize = 14.000
@@ -1007,7 +1008,7 @@ JumpPower_Input.Position = UDim2.new(0, 210, 0, 75)
 JumpPower_Input.Size = UDim2.new(0, 175, 0, 30)
 JumpPower_Input.Font = Enum.Font.Gotham
 JumpPower_Input.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-JumpPower_Input.PlaceholderText = "§ 1-99999"
+JumpPower_Input.PlaceholderText = "Number [1-99999]"
 JumpPower_Input.Text = ""
 JumpPower_Input.TextColor3 = Color3.fromRGB(20, 20, 20)
 JumpPower_Input.TextSize = 14.000
@@ -1082,7 +1083,7 @@ FlySpeed_Input.Position = UDim2.new(0, 210, 0, 125)
 FlySpeed_Input.Size = UDim2.new(0, 175, 0, 30)
 FlySpeed_Input.Font = Enum.Font.Gotham
 FlySpeed_Input.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-FlySpeed_Input.PlaceholderText = "§ 1-99999"
+FlySpeed_Input.PlaceholderText = "Number [1-99999]"
 FlySpeed_Input.Text = ""
 FlySpeed_Input.TextColor3 = Color3.fromRGB(20, 20, 20)
 FlySpeed_Input.TextSize = 14.000
@@ -1133,7 +1134,7 @@ TargetName_Input.Position = UDim2.new(0, 150, 0, 30)
 TargetName_Input.Size = UDim2.new(0, 175, 0, 30)
 TargetName_Input.Font = Enum.Font.Gotham
 TargetName_Input.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-TargetName_Input.PlaceholderText = "target..."
+TargetName_Input.PlaceholderText = "@target..."
 TargetName_Input.Text = ""
 TargetName_Input.TextColor3 = Color3.fromRGB(20, 20, 20)
 TargetName_Input.TextSize = 14.000
@@ -1902,7 +1903,7 @@ Credits_Label.BorderSizePixel = 0
 Credits_Label.Position = UDim2.new(0, 25, 0, 150)
 Credits_Label.Size = UDim2.new(0, 350, 0, 150)
 Credits_Label.Font = Enum.Font.SourceSans
-Credits_Label.Text = "Owner: RUNEX \nDeveloper: RUNEX and Midway_Roblox \nVersion: "..version
+Credits_Label.Text = "Owner: RUNEX \nDeveloper RUNEX and MIDWAY_ROBLOX \nTelegram RUNEX_X_SCRIPT \nVersion: "..version
 Credits_Label.TextColor3 = Color3.fromRGB(0, 255, 255)
 Credits_Label.TextSize = 24.000
 Credits_Label.TextWrapped = true
@@ -2146,7 +2147,7 @@ end
 local function UpdateTarget(player)
 	pcall(function()
 		if table.find(ForceWhitelist,player.UserId) then
-			SendNotify("LoL System","You cant target this player: "..player.Name.." / "..player.DisplayName,5)
+			SendNotify("System Broken","You cant target this player: "..player.Name.." / "..player.DisplayName,5)
 			player = nil
 		end
 	end)
@@ -2518,10 +2519,11 @@ end)
 CMDBar.FocusLost:Connect(function()
 	command = CMDBar.Text
 	Players:Chat(command)
-	SendNotify("LoL System",("Executed "..command),5)
+	SendNotify("System Broken",("Executed "..command),5)
 	CMDBar.Text = ""
 end)
 
+--CHARACTER SECTION
 
 WalkSpeed_Button.MouseButton1Click:Connect(function()
 	pcall(function()
@@ -2530,7 +2532,7 @@ WalkSpeed_Button.MouseButton1Click:Connect(function()
 			Speed = 16
 		end
 		plr.Character.Humanoid.WalkSpeed = tonumber(Speed)
-		SendNotify("LoL System","Walk speed updated",5)
+		SendNotify("System Broken","Walk speed updated.",5)
 	end)
 end)
 
@@ -2541,7 +2543,7 @@ JumpPower_Button.MouseButton1Click:Connect(function()
 			Power = 50
 		end
 		plr.Character.Humanoid.JumpPower = tonumber(Power)
-		SendNotify("LoL System","Jump power updated",5)
+		SendNotify("System Broken","Jump power updated.",5)
 	end)
 end)
 
@@ -2552,7 +2554,7 @@ FlySpeed_Button.MouseButton1Click:Connect(function()
 			Speed = 50
 		end
 		FlySpeed = tonumber(Speed)
-		SendNotify("LoL System","Fly speed updated",5)
+		SendNotify("System Broken","Fly speed updated.",5)
 	end)
 end)
 
@@ -2565,12 +2567,12 @@ end)
 
 SaveCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = GetRoot(plr).Position
-	SendNotify("LoL System","Checkpoint saved",5)
+	SendNotify("System Broken","Checkpoint saved.",5)
 end)
 
 ClearCheckpoint_Button.MouseButton1Click:Connect(function()
 	SavedCheckpoint = nil
-	SendNotify("LoL System","Checkpoint cleared",5)
+	SendNotify("System Broken","Checkpoint cleared.",5)
 end)
 
 local flying = true
@@ -2964,10 +2966,10 @@ WhitelistTarget_Button.MouseButton1Click:Connect(function()
 					table.remove(ScriptWhitelist, i)
 				end
 			end
-			SendNotify("LoL System",TargetedPlayer.." removed from whitelist",5)
+			SendNotify("System Broken",TargetedPlayer.." removed from whitelist.",5)
 		else
 			table.insert(ScriptWhitelist, Players[TargetedPlayer].UserId)
-			SendNotify("LoL System",TargetedPlayer.." added to whitelist", 5)
+			SendNotify("System Broken",TargetedPlayer.." added to whitelist.", 5)
 		end
 	end
 end)
@@ -3388,7 +3390,7 @@ Day_Button.MouseButton1Click:Connect(function()
 	if Shaders_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(255,0,0) then
 		game:GetService("Lighting").ClockTime = 14
 	else
-		SendNotify("LoL System","Please turn off shaders",5)
+		SendNotify("System Broken","Please turn off shaders.",5)
 	end
 end)
 
@@ -3396,7 +3398,7 @@ Night_Button.MouseButton1Click:Connect(function()
 	if Shaders_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(255,0,0) then
 		game:GetService("Lighting").ClockTime = 19
 	else
-		SendNotify("LoL System","Please turn off shaders",5)
+		SendNotify("System Broken","Please turn off shaders.",5)
 	end
 end)
 
@@ -3424,7 +3426,7 @@ end)
 FreeEmotes_Button.MouseButton1Click:Connect(function()
 	if not FreeEmotesEnabled then
 		FreeEmotesEnabled = true
-		SendNotify("LoL System","Loading free emotes\nCredits: RUNEX")
+		SendNotify("System Broken","Loading free emotes.\nCredits: RUNEX and MIDWAY_ROBLOX")
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/AllEmote"))()
 	end
 end)
@@ -3462,7 +3464,7 @@ Players.PlayerRemoving:Connect(function(player)
 	pcall(function()
 		if player.Name == TargetedPlayer then
 			UpdateTarget(nil)
-			SendNotify("LoL System","Targeted player left/rejoined",5)
+			SendNotify("System Broken","Targeted player left/rejoined.",5)
 		end
 	end)
 end)
@@ -3475,19 +3477,19 @@ plr.CharacterAdded:Connect(function(x)
 	end
 	if PotionDi_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(PotionDi_Button)
-		SendNotify("LoL System","PotionDick was automatically disabled due to your character respawn",5)
+		SendNotify("System Broken","PotionDick was automatically disabled due to your character respawn",5)
 	end
 	if PotionFling_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(PotionFling_Button)
-		SendNotify("LoL System","PotionFling was automatically disabled due to your character respawn",5)
+		SendNotify("System Broken","PotionFling was automatically disabled due to your character respawn",5)
 	end
 	if AntiRagdoll_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(AntiRagdoll_Button)
-		SendNotify("LoL System","AntiRagdoll was automatically disabled due to your character respawn",5)
+		SendNotify("System Broken","AntiRagdoll was automatically disabled due to your character respawn",5)
 	end
 	if SpamMines_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(SpamMines_Button)
-		SendNotify("LoL System","SpamMines was automatically disabled due to your character respawn",5)
+		SendNotify("System Broken","SpamMines was automatically disabled due to your character respawn",5)
 	end
 	if Fly_Button.Ticket_Asset.ImageColor3 == Color3.fromRGB(0,255,0) then
 		ChangeToggleColor(Fly_Button)
@@ -3495,7 +3497,7 @@ plr.CharacterAdded:Connect(function(x)
 		Fly_Pad.Visible = false
 		KeyDownFunction:Disconnect()
 		KeyUpFunction:Disconnect()
-		SendNotify("LoL System","Fly was automatically disabled due to your character respawn",5)
+		SendNotify("System Broken","Fly was automatically disabled due to your character respawn",5)
 	end
 	x.Humanoid.Died:Connect(function()
 		pcall(function()
@@ -3508,9 +3510,9 @@ end)
 task.spawn(function()
 	while task.wait(10) do
 		pcall(function()
-			local GuiVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/version"))()
+			local GuiVersion = loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/version"))()
 			if version<GuiVersion then
-				SendNotify("LoL System","You are not using the latest version, please run the script again",5)
+				SendNotify("System Broken","You are not using the latest version, please run the script again.",5)
 				task.wait(5)
 				SysBroker:Destroy()
 				game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
@@ -3530,6 +3532,6 @@ game:GetService("UserInputService").InputBegan:Connect(function(input,gameProces
 	end
 end)
 
-SendNotify("LoL System","RUNEX project \n Good luck have fun",10)
+SendNotify("LoL System","RUNEX project \nGood Luck have fun",10)
 setclipboard("https://t.me/RUNEX_X_SCRIPT")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/LoL-Script/refs/heads/main/premium"))()
